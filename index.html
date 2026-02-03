@@ -1,0 +1,711 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Astrology Prediction</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      min-height: 100vh;
+      background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 20px;
+    }
+
+    .form-container {
+      background: rgba(255, 255, 255, 0.95);
+      border-radius: 20px;
+      padding: 40px;
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+      max-width: 450px;
+      width: 100%;
+    }
+
+    h2 {
+      color: #1a1a2e;
+      text-align: center;
+      margin-bottom: 30px;
+      font-size: 28px;
+      font-weight: 600;
+      position: relative;
+    }
+
+    h2::after {
+      content: '✨';
+      display: block;
+      font-size: 24px;
+      margin-top: 10px;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+    }
+
+    input, select {
+      padding: 14px 18px;
+      border: 2px solid #e0e0e0;
+      border-radius: 10px;
+      font-size: 16px;
+      margin-bottom: 15px;
+      transition: all 0.3s ease;
+      background: #fafafa;
+    }
+
+    input:focus, select:focus {
+      outline: none;
+      border-color: #4a90d9;
+      background: white;
+      box-shadow: 0 0 0 4px rgba(74, 144, 217, 0.1);
+    }
+
+    input::placeholder {
+      color: #999;
+    }
+
+    select {
+      cursor: pointer;
+      appearance: none;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%23666' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: right 12px center;
+      background-size: 20px;
+    }
+
+    button[type="submit"] {
+      padding: 16px 24px;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: white;
+      border: none;
+      border-radius: 10px;
+      font-size: 18px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      margin-top: 10px;
+    }
+
+    button[type="submit"]:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 30px rgba(102, 126, 234, 0.4);
+    }
+
+    button[type="submit"]:active {
+      transform: translateY(0);
+    }
+  </style>
+</head>
+<body>
+
+<div class="form-container">
+  <h2>Astrology Prediction</h2>
+
+  <form id="astroForm">
+    <input name="name" placeholder="Full Name" required>
+    <input name="email" type="email" placeholder="Email" required>
+    <input name="dob" type="date" required>
+    <input name="tob" placeholder="Time of Birth (optional)">
+    <input name="place" placeholder="Place of Birth">
+
+    <select name="focus">
+      <option value="Career">Career</option>
+      <option value="Relationships">Relationships</option>
+      <option value="Health">Health</option>
+    </select>
+
+    <button type="submit">Get Prediction</button>
+  </form>
+</div>
+
+<script>
+document.getElementById("astroForm").addEventListener("submit", function(e) {
+  e.preventDefault();
+
+  const formData = new FormData(this);
+
+  fetch("https://paridhibhatt-55.app.n8n.cloud/webhook/ASTROLOGY-PREDICTION", {
+    method: "POST",
+    body: formData
+  })
+  .then(() => alert("Prediction sent to your email"))
+  .catch(() => alert("Something went wrong"));
+});
+</script>
+
+</body>
+</html><!DOCTYPE html>
+<html>
+<head>
+  <title>Astrology Prediction</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      min-height: 100vh;
+      background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 20px;
+    }
+
+    .form-container {
+      background: rgba(255, 255, 255, 0.95);
+      border-radius: 20px;
+      padding: 40px;
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+      max-width: 450px;
+      width: 100%;
+    }
+
+    h2 {
+      color: #1a1a2e;
+      text-align: center;
+      margin-bottom: 30px;
+      font-size: 28px;
+      font-weight: 600;
+      position: relative;
+    }
+
+    h2::after {
+      content: '✨';
+      display: block;
+      font-size: 24px;
+      margin-top: 10px;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+    }
+
+    input, select {
+      padding: 14px 18px;
+      border: 2px solid #e0e0e0;
+      border-radius: 10px;
+      font-size: 16px;
+      margin-bottom: 15px;
+      transition: all 0.3s ease;
+      background: #fafafa;
+    }
+
+    input:focus, select:focus {
+      outline: none;
+      border-color: #4a90d9;
+      background: white;
+      box-shadow: 0 0 0 4px rgba(74, 144, 217, 0.1);
+    }
+
+    input::placeholder {
+      color: #999;
+    }
+
+    select {
+      cursor: pointer;
+      appearance: none;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%23666' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: right 12px center;
+      background-size: 20px;
+    }
+
+    button[type="submit"] {
+      padding: 16px 24px;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: white;
+      border: none;
+      border-radius: 10px;
+      font-size: 18px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      margin-top: 10px;
+    }
+
+    button[type="submit"]:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 30px rgba(102, 126, 234, 0.4);
+    }
+
+    button[type="submit"]:active {
+      transform: translateY(0);
+    }
+  </style>
+</head>
+<body>
+
+<div class="form-container">
+  <h2>Astrology Prediction</h2>
+
+  <form id="astroForm">
+    <input name="name" placeholder="Full Name" required>
+    <input name="email" type="email" placeholder="Email" required>
+    <input name="dob" type="date" required>
+    <input name="tob" placeholder="Time of Birth (optional)">
+    <input name="place" placeholder="Place of Birth">
+
+    <select name="focus">
+      <option value="Career">Career</option>
+      <option value="Relationships">Relationships</option>
+      <option value="Health">Health</option>
+    </select>
+
+    <button type="submit">Get Prediction</button>
+  </form>
+</div>
+
+<script>
+document.getElementById("astroForm").addEventListener("submit", function(e) {
+  e.preventDefault();
+
+  const formData = new FormData(this);
+
+  fetch("https://paridhibhatt-55.app.n8n.cloud/webhook-test/ASTROLOGY-PREDICTION", {
+    method: "POST",
+    body: formData
+  })
+  .then(() => alert("Prediction sent to your email"))
+  .catch(() => alert("Something went wrong"));
+});
+</script>
+
+</body>
+</html><!DOCTYPE html>
+<html>
+<head>
+  <title>Astrology Prediction</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      min-height: 100vh;
+      background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 20px;
+    }
+
+    .form-container {
+      background: rgba(255, 255, 255, 0.95);
+      border-radius: 20px;
+      padding: 40px;
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+      max-width: 450px;
+      width: 100%;
+    }
+
+    h2 {
+      color: #1a1a2e;
+      text-align: center;
+      margin-bottom: 30px;
+      font-size: 28px;
+      font-weight: 600;
+      position: relative;
+    }
+
+    h2::after {
+      content: '✨';
+      display: block;
+      font-size: 24px;
+      margin-top: 10px;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+    }
+
+    input, select {
+      padding: 14px 18px;
+      border: 2px solid #e0e0e0;
+      border-radius: 10px;
+      font-size: 16px;
+      margin-bottom: 15px;
+      transition: all 0.3s ease;
+      background: #fafafa;
+    }
+
+    input:focus, select:focus {
+      outline: none;
+      border-color: #4a90d9;
+      background: white;
+      box-shadow: 0 0 0 4px rgba(74, 144, 217, 0.1);
+    }
+
+    input::placeholder {
+      color: #999;
+    }
+
+    select {
+      cursor: pointer;
+      appearance: none;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%23666' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: right 12px center;
+      background-size: 20px;
+    }
+
+    button[type="submit"] {
+      padding: 16px 24px;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: white;
+      border: none;
+      border-radius: 10px;
+      font-size: 18px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      margin-top: 10px;
+    }
+
+    button[type="submit"]:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 30px rgba(102, 126, 234, 0.4);
+    }
+
+    button[type="submit"]:active {
+      transform: translateY(0);
+    }
+  </style>
+</head>
+<body>
+
+<div class="form-container">
+  <h2>Astrology Prediction</h2>
+
+  <form id="astroForm">
+    <input name="name" placeholder="Full Name" required>
+    <input name="email" type="email" placeholder="Email" required>
+    <input name="dob" type="date" required>
+    <input name="tob" placeholder="Time of Birth (optional)">
+    <input name="place" placeholder="Place of Birth">
+
+    <select name="focus">
+      <option value="Career">Career</option>
+      <option value="Relationships">Relationships</option>
+      <option value="Health">Health</option>
+    </select>
+
+    <button type="submit">Get Prediction</button>
+  </form>
+</div>
+
+<script>
+document.getElementById("astroForm").addEventListener("submit", function(e) {
+  e.preventDefault();
+
+  const formData = new FormData(this);
+
+  fetch("https://paridhibhatt-55.app.n8n.cloud/webhook-test/ASTROLOGY-PREDICTION", {
+    method: "POST",
+    body: formData
+  })
+  .then(() => alert("Prediction sent to your email"))
+  .catch(() => alert("Something went wrong"));
+});
+</script>
+
+</body>
+</html><!DOCTYPE html>
+<html>
+<head>
+  <title>Astrology Prediction</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      min-height: 100vh;
+      background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 20px;
+    }
+
+    .form-container {
+      background: rgba(255, 255, 255, 0.95);
+      border-radius: 20px;
+      padding: 40px;
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+      max-width: 450px;
+      width: 100%;
+    }
+
+    h2 {
+      color: #1a1a2e;
+      text-align: center;
+      margin-bottom: 30px;
+      font-size: 28px;
+      font-weight: 600;
+      position: relative;
+    }
+
+    h2::after {
+      content: '✨';
+      display: block;
+      font-size: 24px;
+      margin-top: 10px;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+    }
+
+    input, select {
+      padding: 14px 18px;
+      border: 2px solid #e0e0e0;
+      border-radius: 10px;
+      font-size: 16px;
+      margin-bottom: 15px;
+      transition: all 0.3s ease;
+      background: #fafafa;
+    }
+
+    input:focus, select:focus {
+      outline: none;
+      border-color: #4a90d9;
+      background: white;
+      box-shadow: 0 0 0 4px rgba(74, 144, 217, 0.1);
+    }
+
+    input::placeholder {
+      color: #999;
+    }
+
+    select {
+      cursor: pointer;
+      appearance: none;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%23666' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: right 12px center;
+      background-size: 20px;
+    }
+
+    button[type="submit"] {
+      padding: 16px 24px;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: white;
+      border: none;
+      border-radius: 10px;
+      font-size: 18px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      margin-top: 10px;
+    }
+
+    button[type="submit"]:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 30px rgba(102, 126, 234, 0.4);
+    }
+
+    button[type="submit"]:active {
+      transform: translateY(0);
+    }
+  </style>
+</head>
+<body>
+
+<div class="form-container">
+  <h2>Astrology Prediction</h2>
+
+  <form id="astroForm">
+    <input name="name" placeholder="Full Name" required>
+    <input name="email" type="email" placeholder="Email" required>
+    <input name="dob" type="date" required>
+    <input name="tob" placeholder="Time of Birth (optional)">
+    <input name="place" placeholder="Place of Birth">
+
+    <select name="focus">
+      <option value="Career">Career</option>
+      <option value="Relationships">Relationships</option>
+      <option value="Health">Health</option>
+    </select>
+
+    <button type="submit">Get Prediction</button>
+  </form>
+</div>
+
+<script>
+document.getElementById("astroForm").addEventListener("submit", function(e) {
+  e.preventDefault();
+
+  const formData = new FormData(this);
+
+  fetch("https://paridhibhatt-55.app.n8n.cloud/webhook-test/ASTROLOGY-PREDICTION", {
+    method: "POST",
+    body: formData
+  })
+  .then(() => alert("Prediction sent to your email"))
+  .catch(() => alert("Something went wrong"));
+});
+</script>
+
+</body>
+</html><!DOCTYPE html>
+<html>
+<head>
+  <title>Astrology Prediction</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      min-height: 100vh;
+      background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 20px;
+    }
+
+    .form-container {
+      background: rgba(255, 255, 255, 0.95);
+      border-radius: 20px;
+      padding: 40px;
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+      max-width: 450px;
+      width: 100%;
+    }
+
+    h2 {
+      color: #1a1a2e;
+      text-align: center;
+      margin-bottom: 30px;
+      font-size: 28px;
+      font-weight: 600;
+      position: relative;
+    }
+
+    h2::after {
+      content: '✨';
+      display: block;
+      font-size: 24px;
+      margin-top: 10px;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+    }
+
+    input, select {
+      padding: 14px 18px;
+      border: 2px solid #e0e0e0;
+      border-radius: 10px;
+      font-size: 16px;
+      margin-bottom: 15px;
+      transition: all 0.3s ease;
+      background: #fafafa;
+    }
+
+    input:focus, select:focus {
+      outline: none;
+      border-color: #4a90d9;
+      background: white;
+      box-shadow: 0 0 0 4px rgba(74, 144, 217, 0.1);
+    }
+
+    input::placeholder {
+      color: #999;
+    }
+
+    select {
+      cursor: pointer;
+      appearance: none;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%23666' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: right 12px center;
+      background-size: 20px;
+    }
+
+    button[type="submit"] {
+      padding: 16px 24px;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: white;
+      border: none;
+      border-radius: 10px;
+      font-size: 18px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      margin-top: 10px;
+    }
+
+    button[type="submit"]:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 30px rgba(102, 126, 234, 0.4);
+    }
+
+    button[type="submit"]:active {
+      transform: translateY(0);
+    }
+  </style>
+</head>
+<body>
+
+<div class="form-container">
+  <h2>Astrology Prediction</h2>
+
+  <form id="astroForm">
+    <input name="name" placeholder="Full Name" required>
+    <input name="email" type="email" placeholder="Email" required>
+    <input name="dob" type="date" required>
+    <input name="tob" placeholder="Time of Birth (optional)">
+    <input name="place" placeholder="Place of Birth">
+
+    <select name="focus">
+      <option value="Career">Career</option>
+      <option value="Relationships">Relationships</option>
+      <option value="Health">Health</option>
+    </select>
+
+    <button type="submit">Get Prediction</button>
+  </form>
+</div>
+
+<script>
+document.getElementById("astroForm").addEventListener("submit", function(e) {
+  e.preventDefault();
+
+  const formData = new FormData(this);
+
+  fetch("https://paridhibhatt-55.app.n8n.cloud/webhook-test/ASTROLOGY-PREDICTION", {
+    method: "POST",
+    body: formData
+  })
+  .then(() => alert("Prediction sent to your email"))
+  .catch(() => alert("Something went wrong"));
+});
+</script>
+
+</body>
+</html>
